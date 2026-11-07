@@ -10,10 +10,10 @@ horizon_revision = "ba6344a59cb9e755b730dcf02285fc0d33b97d3c"
 id = "rilex_friends"
 file = "crates/horizon-client/src/game.rs"
 name = "rilex_friends"
-source = "src/lib.rs"
+source = "runtime.rs"
 
 [[injection]]
 id = "init-friends-gui"
 kind = "HEAD"
 target = "horizon_client::game::Game<'_>::break_block"
-helper = "src/lib.rs"
+helper = "lib.rs"
