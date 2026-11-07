@@ -1,19 +1,20 @@
 ﻿[mod]
 id = "rilex_friends"
-version = "1.0.0"
+version = "1.0.5"
 priority = 100
 
 [compatibility]
 horizon_revision = "ba6344a59cb9e755b730dcf02285fc0d33b97d3c"
 
 [[module]]
-id = "rilex_friends"
+id = "runtime"
 file = "crates/horizon-client/src/game.rs"
 name = "rilex_friends"
 source = "src/runtime.rs"
 
 [[injection]]
-id = "init-friends-gui"
+id = "break_block"
 kind = "HEAD"
 target = "horizon_client::game::Game<'_>::break_block"
 helper = "src/lib.rs"
+bindings = []
