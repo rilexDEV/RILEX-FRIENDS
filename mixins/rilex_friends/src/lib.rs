@@ -1,6 +1,5 @@
-﻿#[path = "runtime.rs"]
-mod runtime;
+﻿mod runtime;
 
-pub fn on_game_tick() {
+fn on_game_tick() {
     runtime::on_game_tick();
 }
