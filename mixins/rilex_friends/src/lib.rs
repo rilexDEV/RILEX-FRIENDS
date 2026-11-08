@@ -1,6 +1,3 @@
-﻿#[path = "runtime.rs"]
-mod runtime;
-
-fn rilex_friends_hud() {
-    runtime::on_hud();
+﻿fn rilex_friends_hud() {
+    crate::game::rilex_friends::on_hud();
 }
