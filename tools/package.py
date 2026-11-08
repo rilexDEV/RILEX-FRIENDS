@@ -33,7 +33,7 @@ def package():
     manifest = dict(schema=1, id=mod['id'], version=mod['version'], game=GAME,
                     horizon=compat['horizon_revision'], mixins=compat['horizon_mixins_revision'])
     files = {'horizon-native.json': (json.dumps(manifest, indent=2, sort_keys=True) + '\n').encode()}
-    for path in sorted(bundle.iterdir()):
+    for path in sorted(bundle.rglob("*")):
         if path.is_file() and path.suffix in ('.rs', '.toml'):
             files[path.relative_to(ROOT).as_posix()] = path.read_bytes()
     out = ROOT / 'target' / f"{mod['id']}-{mod['version']}.hnmod"

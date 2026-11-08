@@ -1,6 +1,6 @@
 ﻿[mod]
 id = "rilex_friends"
-version = "1.0.9"
+version = "1.1.0"
 priority = 100
 
 [compatibility]
@@ -13,8 +13,8 @@ name = "rilex_friends"
 source = "src/runtime.rs"
 
 [[injection]]
-id = "init-friends-gui"
+id = "init-friends-hud"
 kind = "HEAD"
-target = "horizon_client::game::native_hooks::gui_layer_pre"
+target = "horizon_client::game::native_hooks::Game<'_>::native_hud"
 helper = "src/lib.rs"
 bindings = []

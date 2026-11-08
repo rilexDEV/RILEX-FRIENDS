@@ -54,7 +54,7 @@ dependencies = [
 
 [[package]]
 name = "rilex-friends"
-version = "1.0.5"
+version = "1.0.9"
 
 [[package]]
 name = "serde"
