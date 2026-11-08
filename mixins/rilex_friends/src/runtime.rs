@@ -1,9 +1,5 @@
-use std::sync::Once;
-
-static FIRST_BREAK: Once = Once::new();
-
-pub fn on_break_block() {
-    FIRST_BREAK.call_once(|| {
-        eprintln!("[RILEX FRIENDS] 2026: break_block hook reached");
-    });
+﻿pub fn on_render_frame() {
+    // سنطبع رسالة تحذيرية. هذه الرسالة ستظهر في الملف النصي
+    // (حاول أن تفتح اللعبة، وسترى الملف ينمو بسرعة في ملف latest.log)
+    println!("[RILEX FRIENDS] I AM ALIVE AND RENDERING!");
 }

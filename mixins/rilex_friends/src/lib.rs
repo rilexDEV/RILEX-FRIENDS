@@ -1,3 +1,6 @@
-fn rilex_friends_break_block() {
-    crate::game::rilex_friends::on_break_block();
+﻿#[path = "runtime.rs"]
+mod runtime;
+
+fn on_render_frame() {
+    runtime::on_render_frame();
 }
