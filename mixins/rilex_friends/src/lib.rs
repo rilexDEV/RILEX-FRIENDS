@@ -1,6 +1,6 @@
 ﻿#[path = "runtime.rs"]
 mod runtime;
 
-fn on_render_frame() {
-    runtime::on_render_frame();
+fn on_gui_layer_pre() {
+    runtime::on_gui_layer_pre();
 }
