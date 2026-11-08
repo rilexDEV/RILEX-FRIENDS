@@ -17,4 +17,8 @@ id = "init-friends-hud"
 kind = "HEAD"
 target = "horizon_client::game::native_hooks::Game<'_>::native_hud"
 helper = "src/lib.rs"
-bindings = []
+bindings = [
+    { name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" },
+    { name = "batch", ty = "&mut HudBatch", value = "&mut *batch" },
+    { name = "corners", ty = "&mut Corners", value = "&mut *corners" },
+]
