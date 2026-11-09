@@ -5,7 +5,7 @@ edition = "2024"
 rust-version = "1.85"
 
 [lib]
-path = "src/runtime.rs"
+path = "src/standalone.rs"
 
 [dependencies]
 log = "0.4"

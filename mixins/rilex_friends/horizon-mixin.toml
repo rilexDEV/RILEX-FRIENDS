@@ -12,6 +12,12 @@ file = "crates/horizon-client/src/game.rs"
 name = "rilex_friends"
 source = "src/runtime.rs"
 
+[[module]]
+id = "gui"
+file = "crates/horizon-client/src/game.rs"
+name = "rilex_friends_gui"
+source = "src/gui.rs"
+
 [[injection]]
 id = "init-friends-hud"
 kind = "HEAD"
@@ -20,5 +26,22 @@ helper = "src/lib.rs"
 bindings = [
     { name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" },
     { name = "batch", ty = "&mut HudBatch", value = "&mut *batch" },
-    { name = "corners", ty = "&mut Corners", value = "&mut *corners" },
 ]
+
+[[injection]]
+id = "friends-key"
+kind = "HEAD"
+target = "horizon_client::game::native_hooks::Game<'_>::native_key"
+helper = "src/key.rs"
+bindings = [
+    { name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" },
+    { name = "key", ty = "&str", value = "key" },
+    { name = "pressed", ty = "bool", value = "pressed" },
+]
+
+[[injection]]
+id = "register"
+kind = "HEAD"
+target = "horizon_client::game::native_hooks::Game<'_>::native_mods"
+helper = "src/register.rs"
+bindings = [{ name = "mods", ty = "&mut Vec<NativeMod>", value = "&mut *mods" }]
